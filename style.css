@@ -69,7 +69,7 @@ button {
 
 }
 
-#operations {
+#operations, #equal {
 
     background-color: grey;
     color: black;
