@@ -1,77 +1,80 @@
-const screenDisplay = document.querySelector( '.display');
-const buttons = document.querySelectorAll('button[id]')
-const clearButton = document.querySelector( '#clear')
-const equalButton = document.querySelector( '#equal')
 
 
-let currentNumber = '0';
-let currentOperation = null;
+const calculator = document.querySelector(".calculator")
+const keys = calculator.querySelector(".buttons")
+const display = document.querySelector(".display")
 
 
-buttons.forEach (btn => {
-    btn.addEventListener( 'click', function() 
-    
-    { inputNumber(this.id)
+keys.addEventListener('click', e => {
+    if (e.target.matches('button')) {
+
+        const key = e.target
+        const action = key.dataset.action
+        const keyContent = key.textContent 
+        const displayedNum = display.textContent
+
+        if (action === 'decimal') { display.textContent = displayedNum + '.'} 
+
+        if (!action) {if (displayedNum === '0')  {display.textContent = keyContent}
         
-    });
+        else {display.textContent = displayedNum + keyContent}
 
-});
+        if (action === 'add' ||
+        action === 'divide' ||
+        action === 'multiply' ||
+        action === 'substract'  
+         ) {
+        key.classList.add('is-depressed')
 
-const inputNumber = number => {
+        const previousKeyType = calculator.dataset.previousKeyType
 
-    const screenNumber = screenDisplay.innerHTML ;
-    
-    if ( screenNumber.length < 16) 
-    screenDisplay.innerHTML = parseInt(screenNumber + number).toString();
-}
+        if (!action) {
+            if (displayedNum === '0' || previousKeyType === 'operator') {
+                display.textContent = keyContent}
 
-
-
-clearButton.addEventListener ( 'click', function() {screenDisplay.innerHTML = "0"; 
-});
-
-equalButton.addEventListener('click', function () {
-    calculate();
-});
-
-
-///////////////////
-
-
-const calculate = () => { 
-    if (currentOperation !== null) {
+                else {display.textContent = displayedNum + keyContent}
+            }
         
-        const result = performOperation() ;
-        screenDisplay.innerHTML = result.toString();
-        currentNumber = result.toString();
-        currentOperation = '=';
+        calculator.dataset.previousKeyType = 'operator'
+
+        }
+    }
     }
 
-};
 
-const performOperation = () => {
+})
 
-    const operand2 = parseFloat(screenDisplay.innerHTML);
-    switch (currentOperation) {
 
-        case 'add':
-        return parseFloat(currentNumber) + operand2;
-
-        case 'substract': 
-        return parseFloat(currentNumber) - operand2;
-
-        case 'multiply':
-            return parseFloat(currentNumber) * operand2;
-
-        case 'divide':
-                return parseFloat(currentNumber) / operand2;
-
-                default:
-                    return operand2;
-
-    }
-}
+keys.addEventListener("click", e => {
+ if (e.target.matches("button")) {
+   
+const key = e.target
+const action = key.dataset.action
 
 
 
+if (action === 'add' ||
+action === 'divide' ||
+action === 'multiply' ||
+action === 'substract'  
+ ) {
+    console.log('operator key!')
+  } 
   
+
+if (!action) {
+    console.log('number key!')
+  }
+
+
+if (action === 'clear') { console.log('clear key!')}
+
+if (action === 'calculate')  {console.log('calculate key!')}
+
+if (action === 'decimal') {console.log('decimal key!')}
+
+
+ } 
+})
+
+
