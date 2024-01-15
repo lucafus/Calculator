@@ -8,29 +8,18 @@ const display = calculator.querySelector(".display");
 
 const calculate =(n1,operator, n2) => { 
 
-    let result = ''
+  const firstNum = parseFloat(n1)
+  const secondNum = parseFloat(n2)
 
-    if (operator === 'add') {
-        result = parseFloat(n1) + parseFloat(n2)
-    }
+    if (operator === 'add') return firstNum + secondNum
 
-    else if (operator === 'subtract') {
+    if (operator === 'subtract') return firstNum - secondNum                                                                                                
 
-        result = parseFloat(n1) - parseFloat(n2)
-    }
+    if (operator === 'divide') return firstNum / secondNum
 
-    else if (operator === 'divide') {
+    if (operator === 'multiply') return firstNum * secondNum 
 
-        result = parseFloat(n1) / parseFloat(n2) 
-    }
-
-    else if (operator === 'multiply') {
-
-        result = parseFloat(n1) * parseFloat(n2)
-    }
-
-    return result
-}
+   }
 
 
 
@@ -81,11 +70,27 @@ keys.addEventListener('click', e => {
     }
        
         if (action === 'clear') {
-            console.log('clear key!');
+           if (key.textContent = 'AC') {
+            calculator.dataset.firstValue = ''
+            calculator.dataset.modValue = ''
+            calculator.dataset.operator = ''
+            calculator.dataset.previousKeyType = ''
+           } else { key.textContent = 'AC'}
 
+           
+
+            display.textContent = 0
             calculator.dataset.previousKeyType = 'clear'
         }
 
+
+        if (!action === 'clear') {
+            
+            const clearButton = calculator.querySelector('[data-action = clear]')
+            clearButton.textContent = 'CE'
+        }
+
+/////////////////////////////////
         if (action === 'add' ||
             action === 'divide' ||
             action === 'multiply' ||
@@ -114,6 +119,8 @@ if (firstValue &&
             calculator.dataset.previousKeyType = 'operator';
             }
 
+           
+
             if (action === 'calculate') {
                 let firstValue = calculator.dataset.firstValue
                 const operator = calculator.dataset.operator
@@ -122,7 +129,6 @@ if (firstValue &&
             if (firstValue) {
 
                  if (previousKeyType === 'calculate') {
-                    
                     secondValue = calculator.dataset.modValue 
                     firstValue = displayedNum
                  }
