@@ -15,8 +15,8 @@ Welcome to the JavaScript Calculator project! This simple calculator is designed
 To use the calculator, simply open the `index.html` file in your preferred web browser. The calculator interface will appear, allowing you to start performing calculations right away.
 
 ```bash
-git clone https://github.com/your-username/javascript-calculator.git
-cd javascript-calculator
+git clone https://github.com/your-username/Javascript-Calculator.git
+cd Javascript-Calculator
 ```
 
 ## Usage
