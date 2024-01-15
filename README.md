@@ -1,21 +1,37 @@
-# Calculator
+# JavaScript Calculator
 
-Pseudocode
+## Overview
 
-I have to create a function that will calculate the numbers I generate in the display
+Welcome to the JavaScript Calculator project! This simple calculator is designed to perform basic arithmetic operations in a user-friendly and efficient manner. Whether you're a beginner learning JavaScript or an experienced developer looking for a quick and handy calculator, this project is here to serve your needs.
 
+## Features
 
-Once the numbers are displayed I will add the operands directly to the screen 
+- **User-Friendly Interface:** The calculator provides a clean and intuitive interface, making it easy for users to input and understand calculations.
+- **Basic Arithmetic Operations:** Perform addition, subtraction, multiplication, and division effortlessly.
+- **Clear and Reset:** Clear the current input or reset the entire calculation with just one click.
 
+## Getting Started
 
-A calculation function will be created and located here, it will get the number and operands and do the calculation
+To use the calculator, simply open the `index.html` file in your preferred web browser. The calculator interface will appear, allowing you to start performing calculations right away.
 
+```bash
+git clone https://github.com/your-username/javascript-calculator.git
+cd javascript-calculator
+```
 
-I need to found a way to get the results of the number inputs and use it alongside with the operands 
+## Usage
 
+1. **Numeric Buttons:** Click on the numeric buttons to input your numbers.
+2. **Operator Buttons:** Use the operator buttons (+, -, *, /) to perform arithmetic operations.
+3. **Equal Button:** Press the equal button (=) to see the result of your calculation.
+4. **Reset:** Use the AC to reset the entire calculation.
 
-Once this is complete I need the = operand to fire the calculate function and showcase the result on the display
+## Contributions
 
+Contributions are welcome! If you have ideas for improvements, bug fixes, or new features, feel free to open an issue or submit a pull request. Let's make this calculator even better together.
 
-The clear button is already created and will erase the operation once its finished
+## Acknowledgments
 
+A big thank you to the JavaScript community for providing valuable resources and inspiration for this project.
+
+Happy calculating! 🧮✨
